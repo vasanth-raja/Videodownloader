@@ -4,8 +4,34 @@
     margin: 2rem;
     font-size: medium;
     padding: 1rem;
+    border-radius: 10px;
+    background-color: black;
+    color:aliceblue;
 }
 .submit{
     padding: 0.1rem 3rem;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.4);
 
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80vw;
+    min-height: 40vh;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+.Bold{
+    color:black;
+}
+.down{
+    font-size:large;
+    margin:1rem;
+}
+.loading{
+    color: black;
+    margin: 1rem;
 }
