@@ -31,12 +31,3 @@ router.post('/',(req,res,next)=>{
 })
 module.exports=router
 
-fetch('movies/data').then((moviedata)=>{
-    return fetch('cast/data',{
-        castname:moviedata.castname
-    })
-}).then((castdata)=>{
-    console.log(castdata)
-}).catch((error)=>{
-    console.log(error)
-})
