@@ -1,5 +1,9 @@
 import React,{useState} from 'react'
 import '../Styles/YouBox.css'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import axios from 'axios'
+
 const YouBox = () => {
     const [link,setLink]=useState("");
     const [url,setUrl]=useState("");
@@ -29,6 +33,22 @@ const YouBox = () => {
         setDetails(data.details)
         console.log(url)
     }
+    async function geturl(url) {
+        axios({
+            url: url,
+            method: 'GET',
+            responseType: 'blob',
+          }).then((response) => {
+            const urlObject = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement("a");
+            link.href = urlObject;
+            link.setAttribute('download', 'recording.mp4');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+           
+          });
+    }
   return (
    <div className='mainbox'>
      <img src="./src/assets/knock.png"/>
@@ -46,14 +66,38 @@ const YouBox = () => {
             {isLoading ? <p>Loading...</p> : null}
         </div>
         {url && url.map((dat,key)=>
-            <div><h1>{dat.qualityLabel}</h1>
-                    <h2>{key}</h2>
-                <h2>{dat.quality}</h2>
+
+            // <div><h1>{dat.qualityLabel}</h1>
+            //         <h2>{key}</h2>
+            //     <h2>{dat.quality}</h2>
                
-                <h2>{details.title}</h2>
-                <h2>{details.lengthSeconds/60}</h2>
-            </div>
-            
+            //     <h2>{details.title}</h2>
+            //     <h2>{details.lengthSeconds/60}</h2>
+            // </div>
+            <Card style={{ width: '18rem', backgroundColor:'grey', margin:'2rem', borderRadius:'0.5rem'
+            }}>
+          
+            <Card.Body>
+              <Card.Title>{details.title}</Card.Title>
+              <Card.Text>
+              {dat.qualityLabel}
+              </Card.Text>
+              <Card.Text>
+              {details.lengthSeconds/60}
+              </Card.Text>
+              <Card.Text>
+              {dat.quality}
+              </Card.Text>
+              <Card.Text>
+              {key}
+               </Card.Text>
+               
+              <Button onClick={()=>geturl(dat.url)} variant="primary" className="download">
+
+             
+               <h3>Download File</h3></Button>
+            </Card.Body>
+          </Card>
             
         )}
        
