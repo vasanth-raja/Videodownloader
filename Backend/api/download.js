@@ -9,7 +9,7 @@ router.get('/',(req,res,next)=>{
 })
 router.post('/',(req,res,next)=>{
     console.log(req.body.url)
-    axios.post('https://us-central1-ez4cast.cloudfunctions.net/tweetVideoURL-getLinkedinVideoURL',{
+    axios.post(process.env.LINKEDINURL,{
         'url':req.body.url
     },
         {

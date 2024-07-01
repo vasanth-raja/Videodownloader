@@ -9,6 +9,7 @@ const NavBar = () => {
         <select className='select' onChange={(e)=>{navigate(e.target.value)}}>
             <option value="linkedIndownload">LinkedIn</option>
             <option value="youtubedownload">Youtube</option>
+            <option value="facebookdownload">FaceBook</option>
         </select>
     </div>
   )

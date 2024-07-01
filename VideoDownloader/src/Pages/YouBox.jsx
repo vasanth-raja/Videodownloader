@@ -13,7 +13,7 @@ const YouBox = () => {
     const submitForm=async(e)=>{
         e.preventDefault();
         setIsLoading(true)
-        const res= await fetch('http://localhost:5000/youtubedownload',{
+        const res= await fetch('https://downloaderbackend.onrender.com/youtubedownload/',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -31,32 +31,44 @@ const YouBox = () => {
         console.log(data.details)
         setUrl(data.data)
         setDetails(data.details)
-        console.log(url)
+        console.log(url) 
     }
-    async function geturl(url) {
-        axios({
-            url: url,
-            method: 'GET',
-            responseType: 'blob',
-          }).then((response) => {
-            const urlObject = window.URL.createObjectURL(new Blob([response.data]));
-            const link = document.createElement("a");
-            link.href = urlObject;
-            link.setAttribute('download', 'recording.mp4');
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-           
-          });
+    async function geturl(url,quality) {
+        const res= await fetch('https://downloaderbackend.onrender.com/youtubedownload/download',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                'url':link,
+                'quality':quality
+            })
+        }).catch(err=>{
+            setIsLoading(false)
+            console.log(err)
+        })
+        if (res.ok) {
+            const blob = await res.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'video.mp4';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+          } else {
+            alert('Failed to download video');
+          }
     }
   return (
    <div className='mainbox'>
-     <img src="./src/assets/knock.png"/>
+     <img src="/assets/knock.png" width='250' height='200'/>
     <div className='box' >
         <form onSubmit={submitForm} >
             <div>
                 <label htmlFor='link' className='Bold'><h2>YOUTUBE VIDEO DOWNLOADER</h2></label>
-                <input onChange={(e)=>{setLink(e.target.value)}} type='text' placeholder=' Enter Link to download video' name='link' id='link' className='link' value={link}/>
+                <input required onChange={(e)=>{setLink(e.target.value)}} type='text' placeholder=' Enter Link to download video' name='link' id='link' className='link' value={link}/>
             </div>
             <div>
                 <button className='submit' type='submit'><h2>Submit</h2></button>
@@ -92,7 +104,7 @@ const YouBox = () => {
               {key}
                </Card.Text>
                
-              <Button onClick={()=>geturl(dat.url)} variant="primary" className="download">
+              <Button onClick={()=>geturl(dat.url,dat.qualityLabel)} variant="primary" className="download">
 
              
                <h3>Download File</h3></Button>

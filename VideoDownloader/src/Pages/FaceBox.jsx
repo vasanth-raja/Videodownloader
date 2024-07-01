@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "../Styles/LinkBox.css";
-const LinkBox = () => {
+const FaceBox = () => {
   const [link, setLink] = useState("");
   const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -10,7 +10,7 @@ const LinkBox = () => {
     setUrl("")
     e.preventDefault();
     setIsLoading(true);
-    const res = await fetch("https://downloaderbackend.onrender.com/download", {
+    const res = await fetch("https://downloaderbackend.onrender.com/facebookdownload", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,32 +23,20 @@ const LinkBox = () => {
       console.log(err);
     });
     setIsLoading(false);
+   
     const data = await res.json();
-    let headers = new Headers();
-
-    headers.append('Content-Type', 'application/mp4');
-    headers.append('Accept', 'application/mp4');
-    // headers.append('Authorization', 'Basic ' + base64.encode(username + ":" +  password));
-    headers.append('Origin','http://127.0.0.1:5173');
-
-    axios({
-      url: data.url,
-      method: 'GET',
-      responseType: 'blob',
-    }).then((response) => {
-      const urlObject = window.URL.createObjectURL(new Blob([response.data]));
-      setUrl(urlObject);
-     
-    });
+    console.log("data.links",data.data);
+    setUrl(data.data.links['Download High Quality'])
+    
     console.log(data);
   };
   return (
     <div className="mainbox">
-     <img src="/assets/linkedin.png" width='250' height='200'/>
+     <img src="/assets/facebook.png" width='250' height='200'/>
     <div className="box">
       <form onSubmit={submitForm}>
         <div>
-          <label htmlFor="link" className="Bold"><h2>Video Downloader</h2></label>
+          <label htmlFor="link" className="Bold"><h2>FaceBook Reels Downloader</h2></label>
           <input
             onChange={(e) => {
               setLink(e.target.value);
@@ -90,4 +78,4 @@ const LinkBox = () => {
   );
 };
 
-export default LinkBox;
+export default FaceBox;
