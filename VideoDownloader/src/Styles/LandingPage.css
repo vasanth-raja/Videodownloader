@@ -1,0 +1,11 @@
+.landing{
+    color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+.how>li{
+    list-style:decimal;
+}

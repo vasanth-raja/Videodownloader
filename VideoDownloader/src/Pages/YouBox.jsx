@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import '../Styles/YouBox.css'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import axios from 'axios'
+
 
 const YouBox = () => {
     const [link,setLink]=useState("");
@@ -63,15 +63,18 @@ const YouBox = () => {
     }
   return (
    <div className='mainbox'>
-     <img src="/assets/knock.png" width='250' height='200'/>
+     
     <div className='box' >
         <form onSubmit={submitForm} >
+        <img src="/assets/youtube.png" width='300' height='200'/>
+            <div className='submitbox' >
             <div>
-                <label htmlFor='link' className='Bold'><h2>YOUTUBE VIDEO DOWNLOADER</h2></label>
+           
                 <input required onChange={(e)=>{setLink(e.target.value)}} type='text' placeholder=' Enter Link to download video' name='link' id='link' className='link' value={link}/>
             </div>
             <div>
                 <button className='submit' type='submit'><h2>Submit</h2></button>
+            </div>
             </div>
         </form>
         <div className='loading'>

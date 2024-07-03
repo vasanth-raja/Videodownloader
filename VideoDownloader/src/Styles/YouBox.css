@@ -1,7 +1,7 @@
 .link{
     width:60vw;
     height: 2rem;
-     margin: 2rem;
+     margin: 1rem;
      font-size: medium;
      padding: 1rem;
      border-radius: 10px;
@@ -23,9 +23,8 @@
      flex-direction: column;
      width: 80vw;
      min-height: 40vh;
-     background-color: rgb(221, 231, 229);
      border-radius: 10px;
-     box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
+
  }
  .Bold{
      color:black;
@@ -42,4 +41,11 @@
     padding: 0.5rem 1rem;
     margin-top: 2rem;
     background-color:rgb(0, 234, 255) ;
+}
+.submitbox{
+    background-color: aliceblue;
+    width: 80vw;
+    max-height: 30vh;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
 }

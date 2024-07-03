@@ -32,11 +32,12 @@ const FaceBox = () => {
   };
   return (
     <div className="mainbox">
-     <img src="/assets/facebook.png" width='250' height='200'/>
+     
     <div className="box">
       <form onSubmit={submitForm}>
+      <img src="/assets/facebook.png" width='300' height='200'/>
+      <div className="submitbox">
         <div>
-          <label htmlFor="link" className="Bold"><h2>FaceBook Reels Downloader</h2></label>
           <input
             onChange={(e) => {
               setLink(e.target.value);
@@ -54,6 +55,7 @@ const FaceBox = () => {
           <button className="submit" type="submit">
             <h2>Submit</h2>
           </button>
+        </div>
         </div>
       </form>
       <div className="loading">{isLoading ? <p>Loading...</p> : null}</div>

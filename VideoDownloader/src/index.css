@@ -29,6 +29,7 @@ body {
   align-items: center;
   min-width: 100vw;
   min-height: 100vh;
+  background: linear-gradient(rgb(221, 231, 229), rgb(244, 255, 252));
 }
 button {
   border-radius: 8px;

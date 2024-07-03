@@ -8,10 +8,54 @@
     position: absolute;
     top: 0;
     left:0;
-    justify-content: space-evenly;
+    justify-content:space-between;
     align-items: center;
 }
 .select{
+
    padding: 1rem;
+   font-weight: 500;
 
 }
+.menus{
+    margin: 1rem;
+}
+.ham{
+    display: none;
+}
+.links{
+    display: none;
+}
+.hidelinks{
+    display: none;
+}
+.menu{
+    background-color:aliceblue;   
+}
+
+@media (max-width: 600px){
+    .ham{
+        display: block;
+        margin-right: 1rem;
+
+    }
+    .links{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-top:  14vh;
+        width: 100vw;
+    }
+    .select{
+        display: none;
+    }
+    .val{
+        border: 4px;
+
+    }
+    .val:hover{
+        background-color: cadetblue;
+        
+    }
+}
+
