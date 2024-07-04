@@ -89,10 +89,10 @@ const YouBox = () => {
             //     <h2>{details.title}</h2>
             //     <h2>{details.lengthSeconds/60}</h2>
             // </div>
-            <Card style={{ width: '18rem', backgroundColor:'grey', margin:'2rem', borderRadius:'0.5rem'
+            <Card style={{ width: '70vw', backgroundColor:'aliceblue', margin:'2rem', borderRadius:'0.5rem',color:'black'
             }}>
           
-            <Card.Body>
+            <Card.Body style={{marginTop:'2.5rem'}}>
               <Card.Title>{details.title}</Card.Title>
               <Card.Text>
               {dat.qualityLabel}

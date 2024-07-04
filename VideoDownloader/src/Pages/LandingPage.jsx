@@ -3,19 +3,30 @@ import '../Styles/LandingPage.css'
 const LandingPage = () => {
   return (
     <div className='landing'>
+    <div className='card'>
         <div>
-            How it works?
+           <h2 className='how'> How it works?</h2>
         </div>
         <div>
-            <ul className='how'>
-                <li>
+            
+            
+                <p>
                     Select the social media you want to download from
-                </li>
-                <li>
+                </p>
+                <p>
                     Drop the link in the input box and kindly wait for the link to be processed
-                </li>
-            </ul>
+                </p>
+                <p>
+                    Click the Download button or preview the video here
+                </p>
+                <p>
+                    To Switch between Social Media, Select the desired social media platform to download videos from on the rightside of the navbar
+                </p>
+                <p>
+                    Completely Free No Sign Up is required
+                </p>
         </div>
+    </div>
     </div>
   )
 }

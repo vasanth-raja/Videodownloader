@@ -1,9 +1,9 @@
 .nav{
     display: flex;
     flex-direction: row;
-    background-color: aliceblue;
+    background-color: #925E78;
     width: 100vw;
-    height: 14vh;
+    height: 12vh;
     color: black;
     position: absolute;
     top: 0;
@@ -19,6 +19,7 @@
 }
 .menus{
     margin: 1rem;
+    color: #F4EFF7;
 }
 .ham{
     display: none;
@@ -43,7 +44,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        margin-top:  14vh;
+        margin-top:  12vh;
         width: 100vw;
     }
     .select{

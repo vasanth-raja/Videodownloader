@@ -1,0 +1,14 @@
+.footer{
+        color: black;
+        bottom: 0;
+        height: 60px;
+        margin: 0;
+        border-top-width: 2px;
+        border-top-style: solid;
+        border-top-color: #925E78;
+}
+.foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
