@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import "../Styles/LinkBox.css";
-const LinkBox = () => {
+const InstaBox = () => {
   const [link, setLink] = useState("");
   const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -10,7 +9,7 @@ const LinkBox = () => {
     setUrl("")
     e.preventDefault();
     setIsLoading(true);
-    const res = await fetch("https://downloaderbackend.onrender.com/download", {
+    const res = await fetch("http://localhost:5000/instagramdownload", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,34 +22,31 @@ const LinkBox = () => {
       console.log(err);
     });
     setIsLoading(false);
+   
     const data = await res.json();
-    let headers = new Headers();
-
-    headers.append('Content-Type', 'application/mp4');
-    headers.append('Accept', 'application/mp4');
-    // headers.append('Authorization', 'Basic ' + base64.encode(username + ":" +  password));
-    headers.append('Origin','http://127.0.0.1:5173');
-
     axios({
-      url: data.url,
+      url: data.data.data.video_url,
       method: 'GET',
       responseType: 'blob',
     }).then((response) => {
       const urlObject = window.URL.createObjectURL(new Blob([response.data]));
       setUrl(urlObject);
      
-    });
+    }).catch((err)=>{
+      console.log(err)
+    })
+    console.log("data",data.data.data.video_url);
+    
     console.log(data);
   };
   return (
     <div className="mainbox">
-
+     
     <div className="box">
       <form onSubmit={submitForm}>
-      <img src="/assets/linkedin.png" width='250' height='125'/>
-        <div className="submitbox">
+      <img src="/assets/Insta.png" width='300' height='200'/>
+      <div className="submitbox">
         <div>
-        
           <input
             onChange={(e) => {
               setLink(e.target.value);
@@ -80,7 +76,7 @@ const LinkBox = () => {
                 </video>
             </div>
         <div className="down">
-          <a href={url} target="_blank" rel="noopener noreferrer" download="name.mp4">
+          <a href={url} target="_blank" rel="noopener noreferrer" download="insta.mp4">
             <button className="submit">
               <h2>Download File</h2>
             </button>
@@ -93,4 +89,4 @@ const LinkBox = () => {
   );
 };
 
-export default LinkBox;
+export default InstaBox;

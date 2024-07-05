@@ -5,6 +5,7 @@ import LinkBox from './Pages/LinkBox'
 import Layout from './Layout/Layout'
 import YouBox from './Pages/YouBox'
 import FaceBox from './Pages/FaceBox'
+import InstaBox from './Pages/InstaBox'
 
 function App() {
   const router= createBrowserRouter(
@@ -14,6 +15,7 @@ function App() {
       <Route path='/youtubedownload' element={<YouBox/>} ></Route>
       <Route path='/linkedIndownload' element={<LinkBox/>}></Route>
       <Route path='/facebookdownload' element={<FaceBox/>}></Route>
+      <Route path='/instagramdownload' element={<InstaBox/>}></Route>
       </Route>
     )
   )

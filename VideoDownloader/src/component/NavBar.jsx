@@ -18,12 +18,14 @@ const NavBar = () => {
             <option value="linkedIndownload">LinkedIn</option>
             <option value="youtubedownload">Youtube</option>
             <option value="facebookdownload">FaceBook</option>
+            <option value="instagramdownload">Instagram</option>
         </select>
     </div>
     <div className={isActive?'links':'hidelinks'}>
       <Link className='val' to={"/linkedIndownload"}> <h1>LinkedIn</h1></Link>
       <Link className='val' to={"/youtubedownload"}> <h1> Youtube </h1></Link>
       <Link className='val' to={"/facebookdownload"}> <h1>FaceBook </h1></Link>
+      <Link className='val' to={"/instagramdownload"}> <h1>Instagram</h1></Link>
     </div>
     </>
   )
