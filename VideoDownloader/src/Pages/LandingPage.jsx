@@ -22,9 +22,6 @@ const LandingPage = () => {
                 <p>
                     To Switch between Social Media, Select the desired social media platform to download videos from on the rightside of the navbar
                 </p>
-                <p>
-                    Completely Free No Sign Up is required
-                </p>
         </div>
     </div>
     </div>

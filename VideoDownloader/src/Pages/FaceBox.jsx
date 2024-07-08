@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import Typer from '../component/Typer';
 import "../Styles/LinkBox.css";
 const FaceBox = () => {
   const [link, setLink] = useState("");
@@ -32,7 +32,7 @@ const FaceBox = () => {
   };
   return (
     <div className="mainbox">
-     
+    <div className="type"> <h1>Download Videos from <Typer/></h1></div>
     <div className="box">
       <form onSubmit={submitForm}>
       <img src="/assets/facebook.png" width='300' height='200'/>

@@ -20,6 +20,9 @@ const Features = () => {
                     Youtube Videos
                 </p>
                 <p>
+                    Instagram Videos
+                </p>
+                <p>
                     Completely Free No Sign Up is required
                 </p>
         </div>

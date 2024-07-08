@@ -50,9 +50,10 @@
     border-radius: 1rem;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
 }
-@media (max-width: 600px){
+@media (max-width: 1000px){
     .box{
         min-height: 30vh;
+        margin-top: 18vh;
     }
     .submitbox{
         width: 80vw;

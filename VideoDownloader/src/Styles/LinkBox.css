@@ -23,6 +23,7 @@
     width: 80vw;
     min-height: 40vh;
     border-radius: 10px;
+    margin-top: 3vh;
 
 }
 .Bold{
@@ -41,9 +42,14 @@
     border-radius: 1rem;
 }
 .mainbox{
-    margin-top:  12vh;
+    margin-top:  10vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.type{
+    color:#254E70;
+    margin-top: 2vh;
+    height: 2vh;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../Styles/LinkBox.css";
+import Typer from "../component/Typer";
 const InstaBox = () => {
   const [link, setLink] = useState("");
   const [url, setUrl] = useState("");
@@ -41,7 +42,7 @@ const InstaBox = () => {
   };
   return (
     <div className="mainbox">
-     
+    <div className="type"> <h1>Download Videos from <Typer/></h1></div>
     <div className="box">
       <form onSubmit={submitForm}>
       <img src="/assets/Insta.png" width='300' height='200'/>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import Typer from '../component/Typer';
 import "../Styles/LinkBox.css";
+
 const LinkBox = () => {
   const [link, setLink] = useState("");
   const [url, setUrl] = useState("");
@@ -44,7 +45,7 @@ const LinkBox = () => {
   };
   return (
     <div className="mainbox">
-
+    <div className="type"> <h1>Download Videos from <Typer/></h1></div>
     <div className="box">
       <form onSubmit={submitForm}>
       <img src="/assets/linkedin.png" width='250' height='125'/>

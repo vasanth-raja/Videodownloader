@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import '../Styles/YouBox.css'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import Typer from '../component/Typer';
 
 const YouBox = () => {
     const [link,setLink]=useState("");
@@ -63,7 +63,7 @@ const YouBox = () => {
     }
   return (
    <div className='mainbox'>
-     
+     <div className="type"> <h1>Download Videos from <Typer/></h1></div>
     <div className='box' >
         <form onSubmit={submitForm} >
         <img src="/assets/youtube.png" width='300' height='200'/>
