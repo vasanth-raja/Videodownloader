@@ -59,7 +59,11 @@ const FaceBox = () => {
         </div>
       </form>
       <div className="loading">{isLoading ? <p>Loading...</p> : null}</div>
-      {url && (
+      <div style={{color:"black"}}>No ads. No watermarks. No registration.
+      Issues? Contact us.</div>
+    </div>
+    <div>
+    {url && (
         <div>
             <div>
                 <video className="video" controls  preload="metadata">

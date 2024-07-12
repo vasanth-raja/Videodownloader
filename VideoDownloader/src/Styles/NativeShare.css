@@ -1,0 +1,59 @@
+.nativeShare{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    background-image:linear-gradient(#f4e9fb, #DDF0FF);
+    cursor: pointer;
+    transition: 0.4s;
+}
+li{
+    list-style: none;
+}
+.dropdown{
+    text-align:start;
+    font-size: large;
+    
+}
+.dropdown>li>button:hover{
+    background-color: grey;
+}
+.dropdown>li>button{
+    width: 18rem;
+}
+.dropdown>li{
+    margin: 2rem;
+    margin-left: 0;
+}
+.panel{
+    background-color: aliceblue;
+    border-radius: 0.3rem;
+    color:black;
+    margin: 0;
+    font-size: large;
+    display: block;
+    overflow: hidden;
+    padding: 1rem;
+    width: 16rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.hidePanel{
+    display: none;
+}
+.smallFlex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.preview{
+    width: 40rem;
+    border-radius: 0.3rem;
+}
+@media (max-width: 1000px){
+    .preview{
+        display: none;
+    }
+}

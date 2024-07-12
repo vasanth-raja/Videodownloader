@@ -24,11 +24,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 100vw;
-  min-height: 100vh;
+  
   background: linear-gradient(#f4eff7, #f6effb);
 }
 button {

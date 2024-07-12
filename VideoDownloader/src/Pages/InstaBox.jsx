@@ -10,7 +10,7 @@ const InstaBox = () => {
     setUrl("")
     e.preventDefault();
     setIsLoading(true);
-    const res = await fetch("http://localhost:5000/instagramdownload", {
+    const res = await fetch("https://downloaderbackend.onrender.com/instagramdownload", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -69,7 +69,11 @@ const InstaBox = () => {
         </div>
       </form>
       <div className="loading">{isLoading ? <p>Loading...</p> : null}</div>
-      {url && (
+      <div style={{color:"black"}}>No ads. No watermarks. No registration.
+      Issues? Contact us.</div>
+    </div>
+    <div>
+    {url && (
         <div>
             <div>
                 <video className="video" controls  preload="metadata">

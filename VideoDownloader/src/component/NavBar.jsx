@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../Styles/NavBar.css'
-import { Link, useNavigate} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 const NavBar = () => {
   const [isActive, setActive] = useState(false);
@@ -23,8 +23,8 @@ const NavBar = () => {
         </div>
         <div className='navHide'>
           <ul className='navLogin'>
-            <li>Login</li>
-            <li>SignUp</li>
+            <li><Link className='val' to={"/"}> Login</Link></li>
+            <li><Link className='val' to={"/alldownload"}> SignUp</Link></li>
           </ul>
         </div>
     </div>

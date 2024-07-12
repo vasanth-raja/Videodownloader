@@ -1,0 +1,24 @@
+.loginBox{
+    margin-top:  10vh;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-around
+}
+.loginRight{
+    background-color: aqua;
+    width: 50vw;
+    min-height: 100%;
+}
+.loginLeft{
+    background-color: aquamarine;
+    width: 50vw;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+}
+.input-label{
+    display: flex;
+    flex-direction: column;
+}

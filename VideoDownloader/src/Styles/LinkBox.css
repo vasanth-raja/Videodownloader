@@ -45,11 +45,14 @@
     margin-top:  10vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
+
 }
 .type{
     color:#254E70;
     margin-top: 2vh;
     height: 2vh;
+    font-size: larger;
+    width: 100%;
 }
