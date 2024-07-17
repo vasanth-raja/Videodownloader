@@ -9,13 +9,16 @@ router.get('/',(req,res,next)=>{
 })
 router.post('/',async (req,res,next)=>{
     console.log(req.body.url)
-    let parts = req.body.url.split("/reel/");
-    console.log("parts",parts)
+    const url = req.body.url;
+    const match = url.match(/\/(reels?|p)\/([^\/]+)/);
+
+   
+    console.log("parts",match)
 const options = {
   method: 'GET',
   url: 'https://instagram-scraper-api2.p.rapidapi.com/v1/post_info',
   params: {
-    code_or_id_or_url: parts[1],
+    code_or_id_or_url: match[2],
     include_insights: 'true'
   },
       headers: {

@@ -3,7 +3,14 @@ import React from 'react'
 const ContactUs = () => {
   return (
     <div>
-        Contact Us
+        <form>
+          <input/>
+          <input/>
+          <input/>
+          <input/>
+          <input/>
+          <button>Submit</button>
+        </form>
     </div>
   )
 }

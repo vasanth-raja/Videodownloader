@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Typer from '../component/Typer';
 import "../Styles/LinkBox.css";
+import { toast } from "react-toastify";
 const FaceBox = () => {
   const [link, setLink] = useState("");
   const [url, setUrl] = useState("");
@@ -9,6 +10,7 @@ const FaceBox = () => {
   const submitForm = async (e) => {
     setUrl("")
     e.preventDefault();
+    if(link.includes('facebook')){
     setIsLoading(true);
     const res = await fetch("https://downloaderbackend.onrender.com/facebookdownload", {
       method: "POST",
@@ -29,6 +31,10 @@ const FaceBox = () => {
     setUrl(data.data.links['Download High Quality'])
     
     console.log(data);
+  }
+  else{
+    toast.error("Please Enter a valid Facebook URL")
+  }
   };
   return (
     <div className="mainbox">

@@ -1,22 +1,28 @@
 const express=require('express')
 const app=express();
 const cors=require('cors')
+
+
 const dotenv=require('dotenv')
+app.use(cors())
 dotenv.config();
 const downloadRoutes=require('./api/download')
 const youtubedownload=require('./api/youtubedownload')
 const facebookdownload=require('./api/facedownload')
 const instagramdownload=require('./api/instagramdownload')
 
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors())
+
 app.use('/download',downloadRoutes)
 app.use('/youtubedownload',youtubedownload)
 app.use('/facebookdownload',facebookdownload)
 app.use('/instagramdownload',instagramdownload)
+
 app.use('/',(req,res,next)=>{
-    console.log("Error")
+    console.log("unhandled route")
     res.status(200).json({
         message:"unhandled route"
     })

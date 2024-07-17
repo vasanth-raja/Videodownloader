@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Typer from '../component/Typer';
 import "../Styles/LinkBox.css";
+import { toast } from "react-toastify";
 
 const LinkBox = () => {
   const [link, setLink] = useState("");
@@ -11,6 +12,7 @@ const LinkBox = () => {
     setUrl("")
     e.preventDefault();
     setIsLoading(true);
+    if (link.includes('linkedin')) {
     const res = await fetch("https://downloaderbackend.onrender.com/download", {
       method: "POST",
       headers: {
@@ -42,6 +44,11 @@ const LinkBox = () => {
      
     });
     console.log(data);
+  }
+  else{
+    toast.error("Enter a valid LinedIn URL")
+    return
+  }
   };
   return (
     <div className="mainbox">
@@ -87,7 +94,7 @@ const LinkBox = () => {
         <div className="down">
           <a href={url} target="_blank" rel="noopener noreferrer" download="name.mp4">
             <button className="submit">
-              <h2>Download File</h2>
+              <h3>Download File</h3>
             </button>
           </a>
         </div>

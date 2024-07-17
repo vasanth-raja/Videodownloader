@@ -1,7 +1,8 @@
 .nav{
     display: flex;
     flex-direction: row;
-    background-color: #925E78;
+    /* background-color: #925E78; */
+    background-color:aliceblue;
     width: 100%;
     height: 12vh;
     color: black;
@@ -10,7 +11,7 @@
     left:0;
     justify-content:space-evenly;
     align-items: center;
-    color: #F4EFF7;
+    
 }
 .navLinks{
     display: flex;
@@ -27,7 +28,7 @@
 }
 .menus{
     margin: 1rem;
-    color: #F4EFF7;
+    color: #254E70;
 }
 .ham,.links,.hidelinks{
     display: none;
@@ -37,12 +38,18 @@
 }
 .val{
     text-decoration: none;
-    color: #F4EFF7 ;
+    color: #254E70;
+    font-size: larger;
+    font-weight: bold;
 }
 .val:hover{
-    color: #C2E812;
+    color: #000000;
 }
-
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
 @media (max-width: 1000px){
     .ham{
         display: block;
@@ -59,12 +66,10 @@
         display: none;
     }
     .val{
-        border: 4px;
-        background-color: #254E70;
+        background-color: #DDF0FF;
     }
     .val:hover{
-        background-color: cadetblue;
-        
+        background-color: aliceblue;
     }
     .navLinks{
         display: none;

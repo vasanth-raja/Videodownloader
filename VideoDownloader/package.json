@@ -15,6 +15,7 @@
     "react-bootstrap": "^2.10.3",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
+    "react-toastify": "^10.0.5",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {

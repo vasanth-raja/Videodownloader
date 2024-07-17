@@ -3,7 +3,7 @@ import "../Styles/YouBox.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Typer from "../component/Typer";
-
+import { toast } from "react-toastify";
 const YouBox = () => {
   const [link, setLink] = useState("");
   const [url, setUrl] = useState("");
@@ -12,6 +12,7 @@ const YouBox = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    if (link.includes('youtube') || link.includes('youtu.be')) {
     const res = await fetch(
       "https://downloaderbackend.onrender.com/youtubedownload/",
       {
@@ -34,6 +35,10 @@ const YouBox = () => {
     setUrl(data.data);
     setDetails(data.details);
     console.log(url);
+    }else{
+      toast.error("Please Enter a Valid Youtube Url")
+      setIsLoading(false)
+    }
   };
   async function geturl(url, quality) {
     const res = await fetch(
@@ -120,6 +125,7 @@ const YouBox = () => {
                 margin: "2rem",
                 borderRadius: "0.5rem",
                 color: "black",
+                textAlign:"center"
               }}
             >
               <Card.Body style={{ marginTop: "2.5rem" }}>

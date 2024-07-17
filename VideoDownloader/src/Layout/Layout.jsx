@@ -3,8 +3,10 @@ import NavBar from '../component/NavBar'
 import LandingPage from '../Pages/LandingPage'
 import { Outlet } from 'react-router-dom'
 import Footer from '../Pages/Footer'
-import Features from '../Pages/Features'
+import Foot from '../component/Foot'
 import NativeShare from '../component/NativeShare'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Layout = () => {
   return (
     <div>
@@ -12,8 +14,9 @@ const Layout = () => {
         <Outlet/>
         <NativeShare/>
         <LandingPage/>
-        <Features/>
+        <Foot/>
         <Footer/>
+        <ToastContainer position="top-center"/>
     </div>
   )
 }

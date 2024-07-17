@@ -11,7 +11,7 @@ const NavBar = () => {
     <>
     
     <div className='nav'>
-        <h2 className='menus'>Download videos from Social media</h2>
+        <h2 className='menus title'><img src='/vite.svg' height={40} width={40}/><div style={{marginLeft:"0.5vw"}}>SocialBox</div></h2>
         <button onClick={menu} className='ham menu'><img src="/assets/Ham.png" width='30' height='30' className='menus'/></button>
         <div className='navHide'>
           <ul className='navLinks' >
@@ -23,16 +23,16 @@ const NavBar = () => {
         </div>
         <div className='navHide'>
           <ul className='navLogin'>
-            <li><Link className='val' to={"/"}> Login</Link></li>
-            <li><Link className='val' to={"/alldownload"}> SignUp</Link></li>
+            <li><Link className='val' to={"/alldownload"}> All Sites</Link></li>
           </ul>
         </div>
     </div>
     <div className={isActive?'links':'hidelinks'}>
-      <Link className='val' to={"/linkedIndownload"}> <h2>LinkedIn</h2></Link>
-      <Link className='val' to={"/youtubedownload"}> <h2> Youtube </h2></Link>
-      <Link className='val' to={"/facebookdownload"}> <h2>FaceBook </h2></Link>
-      <Link className='val' to={"/instagramdownload"}> <h2>Instagram</h2></Link>
+      <Link className='val' to={"/linkedIndownload"}> <h3>LinkedIn</h3></Link>
+      <Link className='val' to={"/youtubedownload"}> <h3> Youtube </h3></Link>
+      <Link className='val' to={"/facebookdownload"}> <h3>FaceBook </h3></Link>
+      <Link className='val' to={"/instagramdownload"}> <h3>Instagram</h3></Link>
+      <Link className='val' to={"/alldownload"}><h3> All Sites</h3></Link>
     </div>
     </>
   )

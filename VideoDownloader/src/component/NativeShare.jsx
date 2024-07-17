@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState }  from 'react'
 import '../Styles/NativeShare.css'
 import Dropdown from './Dropdown.jsx';
 const NativeShare = () => {
@@ -6,7 +6,7 @@ const NativeShare = () => {
         {
           title: "Instagram Reels",
           description: "Download photos, videos, stories & reels from Instagram and share them natively on your social accounts.",
-          icon: "/assets/plus.svg"
+          icon: "/assets/plus.svg",
         },
         {
           title: "Tiktok videos without watermark",
@@ -34,6 +34,12 @@ const NativeShare = () => {
           icon: "/assets/plus.svg"
         }
       ];
+      const [activeIndex, setActiveIndex] = useState(null);
+
+      const toggleDropdown = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+      };
+    
   return (
     <div className='nativeShare'>
         <div><h2>Downloading to share on social media?</h2></div>
@@ -41,10 +47,13 @@ const NativeShare = () => {
         <div className='smallFlex'>
         <ul className='dropdown'>
             {dropdownData.map((dropdowndata,index)=>(
-                <Dropdown dropdowndata={dropdowndata} index={index}/>
+                <Dropdown   key={index} 
+                dropdowndata={dropdowndata}
+                isActive={activeIndex === index}
+                onToggle={() => toggleDropdown(index)} />
             ))}
         </ul>
-        <div>
+        <div className='prev'>
           <video autoPlay muted loop className='preview'><source src="/assets/media.mp4" type="video/mp4"></source></video>
         </div>
         </div>

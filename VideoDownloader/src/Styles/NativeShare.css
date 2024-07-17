@@ -4,9 +4,11 @@
     justify-content: space-around;
     align-items: center;
     color: rgb(0, 0, 0);
-    background-image:linear-gradient(#f4e9fb, #DDF0FF);
+    background-image:linear-gradient(#E9F0FB, #E2F0FD);
     cursor: pointer;
     transition: 0.4s;
+    min-height: 70vh;
+    margin-bottom: 2rem;
 }
 li{
     list-style: none;
@@ -21,6 +23,7 @@ li{
 }
 .dropdown>li>button{
     width: 18rem;
+    font-size: medium;
 }
 .dropdown>li{
     margin: 2rem;
@@ -45,8 +48,15 @@ li{
 .smallFlex{
     display: flex;
     flex-direction: row;
-    align-items: center;
+
     justify-content: space-around;
+    min-width:60vw;
+}
+.prev{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
 .preview{
     width: 40rem;

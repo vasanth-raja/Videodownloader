@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../Styles/LinkBox.css";
 import Typer from "../component/Typer";
+import { toast } from "react-toastify";
 const InstaBox = () => {
   const [link, setLink] = useState("");
   const [url, setUrl] = useState("");
@@ -9,6 +10,7 @@ const InstaBox = () => {
   const submitForm = async (e) => {
     setUrl("")
     e.preventDefault();
+    if(link.includes('instagram')){
     setIsLoading(true);
     const res = await fetch("https://downloaderbackend.onrender.com/instagramdownload", {
       method: "POST",
@@ -39,6 +41,9 @@ const InstaBox = () => {
     console.log("data",data.data.data.video_url);
     
     console.log(data);
+    }else{
+      toast.error("Please Eneter valid Instagram URL")
+    }
   };
   return (
     <div className="mainbox">

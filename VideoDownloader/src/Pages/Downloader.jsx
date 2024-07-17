@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../Styles/LinkBox.css";
+import "../Styles/YouBox.css";
 import Typer from "../component/Typer";
-
+import { toast } from "react-toastify";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
@@ -24,8 +25,9 @@ const Downloader =() => {
         e.preventDefault();
         setIsLoading(true);
             let res=null;
+            let error=null;
         try {
-            if (link.includes('youtube')) {
+          if (link.includes('youtube') || link.includes('youtu.be')) {
               res = await detailsYouTube(link);
             } else if (link.includes('linkedin')) {
               res = await downloadLinkedIn(link);
@@ -47,9 +49,19 @@ const Downloader =() => {
               }
           } catch (err) {
             console.log(err)
+            error=err;
           }
           finally {
             setIsLoading(false);
+            if(res){
+              toast.success("Ready to download")
+            }
+            else if(error){
+              toast.error("Please Enter a valid url")
+            }
+            else{
+              toast.error("Sorry Something went wrong") 
+            }
             console.log("result in final",res)
           }
     }
@@ -57,9 +69,10 @@ const Downloader =() => {
   return (
     <div className="mainbox">
     <div className="type"> <h1>Download Videos from <Typer/></h1></div>
+    <div><h2 className="Bold" >Paste the URL of the post or media and press to download in HD</h2></div>
     <div className="box">
+   
       <form onSubmit={submitForm}>
-      <img src="/assets/Insta.png" width='300' height='200'/>
       <div className="submitbox">
         <div>
           <input
@@ -100,6 +113,7 @@ const Downloader =() => {
                 margin: "2rem",
                 borderRadius: "0.5rem",
                 color: "black",
+                textAlign:"center"
               }}
             >
               <Card.Body style={{ marginTop: "2.5rem" }}>
